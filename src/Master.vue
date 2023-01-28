@@ -18,6 +18,22 @@
               <div>
                 {{ myMeal.theMeal }}
               </div>
+              <div>
+                <button @click="setNewAge()" class="btn m-1 btn-primary">
+                  Change Age
+                </button>
+              </div>
+              <div>
+                <button @click="addCheeseToMeal()" class="btn m-1 btn-warning">
+                  Add Cheese
+                </button>
+                <button
+                  @click="removeCheeseFromMeal()"
+                  class="btn m-1 btn-outline-danger"
+                >
+                  Remove Cheese
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -43,6 +59,19 @@ setTimeout(function () {
   uAge.value = 99;
   myMeal.theMeal = "Burger";
 }, 2000);
+
+function setNewAge() {
+  uAge.value++;
+}
+let addedChese = " Cheese";
+
+function addCheeseToMeal() {
+  myMeal.theMeal = myMeal.theMeal.concat(addedChese);
+}
+
+function removeCheeseFromMeal() {
+  myMeal.theMeal = myMeal.theMeal.slice(0, -7);
+}
 
 // use composition API with basic syntax script
 // import { ref, reactive } from "vue";
