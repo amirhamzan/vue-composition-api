@@ -8,7 +8,17 @@
       <div class="col">
         <div class="card">
           <div class="card-body">
-            <div id="app">{{ uName }}</div>
+            <div id="app">
+              <div>
+                {{ uName }}
+              </div>
+              <div>
+                {{ uAge }}
+              </div>
+              <div>
+                {{ myMeal.theMeal }}
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -18,11 +28,40 @@
 
 
 <script setup>
-import { ref } from "vue";
+// using ref function for string, int
+// using reactive function for object
+import { ref, reactive } from "vue";
 
 const uName = ref("Amir");
+const uAge = ref(25);
+const myMeal = reactive({
+  theMeal: "Pizza",
+});
 
 setTimeout(function () {
   uName.value = "Hassan";
+  uAge.value = 99;
+  myMeal.theMeal = "Burger";
 }, 2000);
+
+// use composition API with basic syntax script
+// import { ref, reactive } from "vue";
+
+// export default {
+//   setup() {
+//     const uName = ref("Amir");
+//     const uAge = ref(25);
+//     const myMeal = reactive({
+//       theMeal: "Pizza",
+//     });
+
+//     setTimeout(function () {
+//       uName.value = "Hassan";
+//       uAge.value = 99;
+//       myMeal.theMeal = "Burger";
+//     }, 2000);
+
+//     return { testReturn: myMeal };
+//   },
+// };
 </script>
