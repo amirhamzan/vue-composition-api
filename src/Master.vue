@@ -32,10 +32,12 @@
               <div class="row mt-5">
                 <div class="mb-3">{{ fullName }}</div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="First Name" @input="setFirstName">
+                  <!-- <input type="text" class="form-control" placeholder="First Name" @input="setFirstName"> -->
+                  <input type="text" class="form-control" placeholder="First Name" v-model="firstName">
                 </div>
                 <div class="col">
-                  <input type="text" class="form-control" placeholder="Last Name" @input="setLastName">
+                  <!-- <input type="text" class="form-control" placeholder="Last Name" @input="setLastName"> -->
+                  <input type="text" class="form-control" placeholder="Last Name" v-model="lastName">
                 </div>
               </div>
             </div>
